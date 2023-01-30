@@ -3,11 +3,12 @@ package org.launchcode.techjobs.oo;
 import java.util.Objects;
 
 public class CoreCompetency {
-
+//FIELD
     private int id;
     private static int nextId = 1;
     private String value;
 
+    //CONSTRUCTOR
     public CoreCompetency() {
         this.id = nextId;
         nextId++;
@@ -18,7 +19,7 @@ public class CoreCompetency {
         this.value = value;
     }
 
-    // Custom toString, equals, and hashCode methods:
+    // Custom toString, equals, and hashCode METHODS:
 
     @Override
     public String toString() {
@@ -38,7 +39,20 @@ public class CoreCompetency {
         return Objects.hash(id);
     }
 
+
+
+
     // TODO: Use the "Generate" tool to add a getter and setter for the 'value' field but
     //  ONLY a getter for the 'id' field.
+    public String getValue() {
+        return value;
+    }
 
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
