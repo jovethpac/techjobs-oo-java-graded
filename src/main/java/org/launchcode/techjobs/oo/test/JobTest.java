@@ -38,8 +38,6 @@ public class JobTest {
         assertEquals("Desert",job1.getLocation().getValue());
         assertEquals("Quality Control",job1.getPositionType().getValue());
         assertEquals("Persistence",job1.getCoreCompetency().getValue());
-
-
     }
 
     @Test
@@ -52,25 +50,29 @@ public class JobTest {
 
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
-        // Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
-        // ID:  1
-        // Name: Web Developer
-        // Employer: LaunchCode
-        // Location: St. Louis
-        // Position Type: Front-end developer
-        // Core Competency: JavaScript
+        Job job2 = new Job("Web Developer", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
+        String testOutput =  //put in one giant String and use \n to separate the lines
+         "ID: " + job2.getId()+ "\n" +
+         "Name: Web Developer" + "\n" +
+         "Employer: LaunchCode" + "\n" +
+         "Location: St. Louis" + "\n" +
+         "Position Type: Front-end developer" + "\n" +
+         "Core Competency: JavaScript";
+        assertEquals(testOutput, job2.toString());
     }
 
     @Test
     public void testToStringHandlesEmptyField() {
-        // What if one of the fields is empty?
-        // Job job2 = new Job("", new Employer("LaunchCode"), new Location("St. Louis"), new PositionType("Front-end developer"), new CoreCompetency("JavaScript"));
-        // ID:  1
-        // Name: Data not available
-        // Employer: LaunchCode
-        // Location: St. Louis
-        // Position Type: Front-end developer
-        // Core Competency: JavaScript
+        Job job2 = new Job("", new Employer("LaunchCode"), new Location(""), new PositionType("St. Louis"), new CoreCompetency(""));
+        String testOutput =  //put in one giant String and use \n to separate the lines
+         "ID: " + job2.getId()+ "\n" +
+         //"Name: Web Developer" + "\n" +
+         "Name: Data not available" + "\n" +
+         "Employer: LaunchCode" + "\n" +
+         "Location: Data not available" + "\n" +
+         "Position Type: St. Louis" + "\n" +
+         "Core Competency: Data not available";
+        assertEquals(testOutput, job2.toString());
     }
 
 }

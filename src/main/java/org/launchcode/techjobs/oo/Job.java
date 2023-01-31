@@ -46,7 +46,48 @@ public class Job {
         return Objects.hash(id);
     }
 
-    // TODO: DONE. Add GETTERS for each field EXCEPT nextId. Add SETTERS for each field EXCEPT nextID
+   /*@Override  this is for the first test
+    public String toString() {
+        return "ID: " + this.getId()+ "\n" +
+                "Name: "+ this.getName() +"\n" +
+                "Employer: " + this.getEmployer().getValue() + "\n" +
+                "Location: " + this.getLocation().getValue() + "\n" +
+                "Position Type: " + this.getPositionType().getValue()+ "\n" +
+                "Core Competency: " + this.getCoreCompetency().getValue();
+
+    }*/
+
+
+
+    @Override
+    public String toString() {
+        if (employer.getValue().isEmpty()) {
+            getEmployer().setValue("Data not available");
+        }
+        if (location.getValue().isEmpty()) {
+            getLocation().setValue("Data not available");
+        }
+        if (positionType.getValue().isEmpty()) {
+            getLocation().setValue("Data not available");
+        }
+        if (coreCompetency.getValue().isEmpty()) {
+            getCoreCompetency().setValue("Data not available");
+        } if (name.isEmpty()) {
+            setName("Data not available");
+        }
+        return "ID: " + id + "\n" +
+                "Name: " + name + "\n" +
+                "Employer: " + employer + "\n" +
+                "Location: " + location + "\n" +
+                "Position Type: " + positionType + "\n" +
+                "Core Competency: " + coreCompetency;
+    }
+
+
+
+
+
+    // TODO:  Add GETTERS for each field EXCEPT nextId. Add SETTERS for each field EXCEPT nextID
     //  and id.
 
     public int getId() {
